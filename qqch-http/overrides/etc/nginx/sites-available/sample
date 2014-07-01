@@ -1,0 +1,18 @@
+# this is a sample, DO NOT USE ON PRODUCTION 
+server {
+        listen 80;
+        server_name something.quelquechose.fr;
+
+        access_log /var/log/nginx/something.quelquechose.fr.access.log main;
+        error_log /var/log/nginx/something.quelquechose.fr.error.log info;
+
+        location / {
+                include conf.d/default_proxy.conf;
+
+        }
+
+        include conf.d/locations_deny.conf;
+
+        root /data/www/something.quelquechose.fr;
+}
+
