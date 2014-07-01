@@ -1,0 +1,12 @@
+#!/bin/bash
+
+mkdir -p /data/postgresql/
+
+DBLIST=`sudo -u postgres psql -d postgres -q -t -c 'SELECT 
+datname from pg_database'` 
+for d in $DBLIST 
+do 
+     echo "db = $d"; 
+     sudo -u postgres pg_dump -U postgres $d > /data/postgresql/$d.sql
+done 
+
