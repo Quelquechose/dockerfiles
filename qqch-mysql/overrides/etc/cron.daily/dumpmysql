@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkdir -p /data/backup/mysql/
+mysql --defaults-file=/root/my.cnf -e 'show databases' | while read dbname; do mysqldump --defaults-file=/root/my.cnf  --log-error="/data/backup/mysql/cron.error.log" -E --complete-insert "$dbname" > "/data/backup/mysql/$dbname".sql; done
