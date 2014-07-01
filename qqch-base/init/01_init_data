@@ -1,0 +1,17 @@
+#!/bin/bash
+ROOTWWW="/data/www"
+
+if [ -d $ROOTWWW ]; then 
+ echo "/data/www exists nothing to do"
+else 
+ mkdir -p /data/www
+ mkdir -p /data/etc
+ mkdir -p /data/backup
+ chown -R root:qqch /data
+ chmod -R 755 /data
+
+ chown -R qqch:www-data /data/www
+ chmod -R g+wx /data/www
+ chmod -R o+rx /data/www
+fi
+
