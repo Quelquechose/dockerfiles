@@ -5,3 +5,4 @@ set -x
 
 # enable some apache stuff
 a2enmod wsgi
+a2enmod expires
