@@ -1,0 +1,9 @@
+#!/bin/bash
+ROOTMYSQL="/data/mysql"
+
+if [ -d $ROOTMYSQL ]; then 
+ echo "/data/mysql exists nothing to do"
+else 
+ mv /var/lib/mysql/ /data/mysql 
+fi
+chown -R mysql:mysql /data/mysql
