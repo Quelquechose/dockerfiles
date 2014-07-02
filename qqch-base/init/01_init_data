@@ -8,8 +8,8 @@ else
  mkdir -p /data/etc
  mkdir -p /data/backup
  chown -R root:qqch /data
- chmod -R 755 /data
-
+ chmod  755 /data
+ chmod -R 700 /data/backup
  chown -R qqch:www-data /data/www
  chmod -R g+wx /data/www
  chmod -R o+rx /data/www
