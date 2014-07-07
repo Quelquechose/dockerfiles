@@ -1,17 +1,25 @@
 #!/bin/bash
-ROOTWWW="/data/www"
+BACKUP="/data/backup"
+OVERRIDES="/data/overrides"
+PERMLOCK="/data/perm.lock"
 
-if [ -d $ROOTWWW ]; then 
- echo "/data/www exists nothing to do"
-else 
- mkdir -p /data/www
- mkdir -p /data/etc
- mkdir -p /data/backup
- chown -R root:qqch /data
- chmod  755 /data
- chmod -R 700 /data/backup
- chown -R qqch:www-data /data/www
- chmod -R g+wx /data/www
- chmod -R o+rx /data/www
+if [ ! -f $PERMLOCK ]; then
+  chown root:qqch /data
+  chmod 755 /data
+  touch $PERMLOCK
 fi
+
+if [ ! -d $BACKUP ]; then 
+ mkdir -p $BACKUP
+ chown -R root:qqch $BACKUP
+ chmod -R 700 $BACKUP
+fi
+
+if [ ! -d $OVERRIDES ]; then 
+ mkdir -p $OVERRIDES
+ chown -R root:qqch $OVERRIDES
+ chmod -R 700 $OVERRIDES
+fi
+
+
 

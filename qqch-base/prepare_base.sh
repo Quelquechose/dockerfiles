@@ -15,6 +15,6 @@ cat /build/keys/docker.key >> /home/qqch/.ssh/authorized_keys
 
 
 pwgen -N 1 | while read p; do 
-    echo $p > /home/qqch/secret
+    echo $p > /home/qqch/.secret
     echo qqch:$p | chpasswd
 done
