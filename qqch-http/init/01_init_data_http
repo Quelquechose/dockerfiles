@@ -1,0 +1,10 @@
+#!/bin/bash
+WWW="/data/www"
+
+if [ ! -d $WWW ]; then 
+ mkdir -p $WWW
+ chown -R qqch:www-data $WWW
+ chmod -R g+wx $WWW
+ chmod -R o+rx $WWW
+fi
+
