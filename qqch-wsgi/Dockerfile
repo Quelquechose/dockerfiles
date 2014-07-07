@@ -24,7 +24,7 @@ RUN /build/init/00_fixmount
 
 
 # Install packages needed for this image
-RUN apt-get install -y git libxml2-dev python build-essential python-dev python-pip python-virtualenv libxslt1-dev libjpeg-turbo8-dev libjpeg8-dev libpq-dev libgif-dev libgif4 apache2-mpm-prefork mysql-client libapache2-mod-wsgi
+RUN apt-get install -y git libxml2-dev python build-essential python-dev python-pip python-virtualenv libxslt1-dev libjpeg-turbo8-dev libjpeg8-dev libpq-dev libgif-dev libgif4 apache2-mpm-prefork mysql-client libapache2-mod-wsgi libmysqlclient-dev
  
 
 # Install munin plugins
